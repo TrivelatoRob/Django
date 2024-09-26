@@ -39,20 +39,20 @@ def atualizar_produto(request, produto_id):
         return JsonResponse({"error": "Produto não encontrado"}, status=404)
 
     
-@csrf_exempt   
-def deletar_produto(request):
-    if request.method == 'DELETE':
-        try:
-            body = json.loads(request.body)  # Lê o corpo da requisição JSON
-            produto_remover = body.get('nome')
-            if produto_remover in lista_de_produtos:
-                lista_de_produtos.remove(produto_remover)
-                return JsonResponse({'mensagem': 'Produto removido', 'produtos': lista_de_produtos})
-            else:
-                return JsonResponse({'erro': 'Produto não encontrado'}, status=404)
+# @csrf_exempt   
+# def deletar_produto(request):
+#     if request.method == 'DELETE':
+#         try:
+#             body = json.loads(request.body)  # Lê o corpo da requisição JSON
+#             produto_remover = body.get('nome')
+#             if produto_remover in lista_de_produtos:
+#                 lista_de_produtos.remove(produto_remover)
+#                 return JsonResponse({'mensagem': 'Produto removido', 'produtos': lista_de_produtos})
+#             else:
+#                 return JsonResponse({'erro': 'Produto não encontrado'}, status=404)
             
-        except json.JSONDecodeError:
-            return JsonResponse({'erro': 'JSON inválido'}, status=400)
-    else:
-        return JsonResponse({'erro': 'Método não permitido'}, status=405)
+#         except json.JSONDecodeError:
+#             return JsonResponse({'erro': 'JSON inválido'}, status=400)
+#     else:
+#         return JsonResponse({'erro': 'Método não permitido'}, status=405)
 
