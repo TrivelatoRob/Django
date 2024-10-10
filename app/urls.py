@@ -3,8 +3,9 @@ from . import views
 
 
 urlpatterns = [
-    path('listar_produtos', views.listar_produtos),
-    path('cadastrar_produtos', views.cadastrar_produto),
-    path('deletar_produtos', views.deletar_produto),
-    path('atualizar_produtos', views.atualizar_produto)
+    path('listar_produtos',views.buscar_todos_os_produtos),
+    path('cadastrar_produto',views.cadastrar_produto),
+    path('atualizar/<int:produto_id>',views.atualizar_produto),
+    path('tupla_de_produtos_estaticos',views.produtos_estaticos),
+    path('lista_de_roupas',views.lista_de_roupas)
 ]
