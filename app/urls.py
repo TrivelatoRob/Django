@@ -7,5 +7,6 @@ urlpatterns = [
     path('cadastrar_produto',views.cadastrar_produto),
     path('atualizar/<int:produto_id>',views.atualizar_produto),
     path('tupla_de_produtos_estaticos',views.produtos_estaticos),
-    path('lista_de_roupas',views.lista_de_roupas)
+    path('lista_de_roupas',views.lista_de_roupas),
+    path('formulario_cadastro',views.cadastrar_produto_formulario)
 ]
