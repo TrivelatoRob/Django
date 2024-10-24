@@ -4,7 +4,7 @@ import json
 from django.views.decorators.csrf import csrf_exempt
 from django.views.decorators.http import require_http_methods
 from .models import Produto
-from .forms import ProdutoModelForm
+from .forms import *
 
 #Serve como um protetor no qual nao vai permitir interceptacoes no meio da requisicao do
 #usuario
